@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class Main {
 
@@ -43,11 +44,11 @@ public class Main {
 
             if (original[i] % 2 == 0) {
 
-                resultado[i] = resultado[i] = original[i] * 2;
+                resultado[i] = original[i] * 2;
 
             } else {
 
-                resultado[i] = original[i] * 2;
+                resultado[i] = (int) Math.pow(original[i], 2);
             }
         }
 
@@ -103,11 +104,11 @@ public class Main {
     }
 
     public static void printArray(int[] arr) {
-
+        System.out.print("[");
         for (int value : arr) {
             System.out.print(value + " ");
         }
-
+        System.out.println("]");
         System.out.println();
     }
 }
