@@ -5,18 +5,24 @@ public class Main {
 
     public static void main(String[] args) {
         int opcao=0;
+        String frase;
         Scanner in = new Scanner(System.in);
 
         DynamicArray dynamicArray = new DynamicArray(3);
 
 
-        System.out.println("o que deseja fazer?\n 1 para usar bubbleSort\n 2 para multiplicar os numeros pares da string");
+        System.out.println("o que deseja fazer?\n 1 para usar bubbleSort\n 2 para multiplicar os numeros pares da string\n 3 reverter uma String");
         opcao = in.nextInt();
 
         if (opcao == 1){
             sorted(in, dynamicArray);
-        } else{
+        } else if (opcao == 2){
             oddEven(in, dynamicArray);
+        } else {
+            System.out.println("Digite a frase que deseja reverter: ");
+            in.nextLine();
+            frase = in.nextLine();
+            reverseString(frase);
         }
         in.close();
     }
@@ -102,6 +108,18 @@ public class Main {
                 break;
         }
     }
+
+
+    public static void reverseString(String frase){
+        String r = "";
+
+        for (int i = 0; i < frase.length(); i++){
+            r = frase.charAt(i) + r;
+        }
+
+        System.out.println(r);
+    }
+
 
     public static void printArray(int[] arr) {
         System.out.print("[");
